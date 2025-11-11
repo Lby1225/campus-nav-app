@@ -1,0 +1,68 @@
+/* 重置默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "微软雅黑", sans-serif;
+  overflow: hidden; /* 避免页面滚动 */
+}
+
+/* 头部导航栏 */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  z-index: 999; /* 确保导航栏在最上层 */
+  position: relative;
+}
+
+/* 地图容器：调整层级，避免挡住其他元素 */
+#map {
+  width: 100%;
+  height: calc(100vh - 60px); /* 减去头部高度，避免挡住 */
+  position: relative;
+  z-index: 1; /* 低于侧边栏和路径面板 */
+}
+
+/* 侧边搜索栏：调整定位和层级，让它显示在地图上方 */
+.sidebar {
+  position: absolute;
+  top: 70px; /* 距离头部下方的距离，避免挡住导航 */
+  right: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  z-index: 99; /* 确保在地图上方 */
+}
+
+.sidebar input {
+  width: 200px;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.sidebar button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* 路径规划面板：调整位置，避免被挡住（Leaflet Routing Machine的默认面板） */
+.leaflet-routing-container {
+  position: absolute;
+  top: 70px;
+  left: 20px; /* 放在左侧，避免和搜索栏重叠 */
+  z-index: 999; /* 确保在最上层 */
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  padding: 10px;
+  max-width: 300px;
+}
