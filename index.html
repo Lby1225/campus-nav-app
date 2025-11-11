@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head>
+ <!-- 字符编码和适配设置 --> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>校园导航应用</title> 
+  <!-- 引入Leaflet地图的CSS（CDN在线链接，部署后能正常加载） --> 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> 
+<!-- 路径规划插件的CSS（保持你用的3.2.9版本） --> 
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.9/dist/leaflet-routing-machine.css" /> 
+<!-- 自己的样式文件 --> 
+<link rel="stylesheet" href="./style.css" /> 
+</head> <body> <!-- 页面头部导航栏 --> 
+<header> 
+    <h1>校园导航</h1> 
+    <nav> 
+    <button>主页</button> 
+    <button>课程表</button> 
+    <button>餐厅</button> 
+</nav> 
+</header> 
+<!-- 地图展示区域（id="map" 正确） --> 
+ <div id="map"></div> 
+ <!-- 侧边搜索栏 --> 
+ <div class="sidebar"> 
+    <input type="text" placeholder="搜索地点（比如教学楼A）" /> 
+    <button>搜索</button> 
+    <button id="locate-me">重新定位</button> 
+</div> 
+<!-- 引入Leaflet地图的JS（CDN在线链接） --> 
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> 
+ <!-- 路径规划插件的JS（保持3.2.9版本） --> 
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.9/dist/leaflet-routing-machine.js"></script> 
+  <!-- 自己的交互脚本 --> 
+  <script src="./main.js"></script>
+  </body> 
+  </html>
