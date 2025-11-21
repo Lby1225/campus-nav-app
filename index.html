@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校园导航应用</title>
+  
+  <!-- Leaflet核心CSS（CDN） -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- 路径规划插件CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.9/dist/leaflet-routing-machine.css" />
+  <!-- 自定义样式 -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- 头部导航栏 -->
+  <header>
+    <h1>校园导航</h1>
+    <nav>
+      <button>主页</button>
+      <button>课程表</button>
+      <button>餐厅</button>
+    </nav>
+  </header>
+
+  <!-- 地图容器 -->
+  <div id="map"></div>
+
+  <!-- 侧边搜索栏 -->
+  <div class="sidebar">
+    <input type="text" placeholder="搜索地点（比如第一教学楼）" />
+    <button>搜索</button>
+    <button id="locate-me">重新定位</button>
+  </div>
+
+  <!-- Leaflet核心JS（CDN） -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- 路径规划插件JS -->
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.9/dist/leaflet-routing-machine.js"></script>
+  <!-- 自定义交互逻辑 -->
+  <script src="./main.js"></script>
+</body>
+</html>

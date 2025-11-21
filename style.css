@@ -1,0 +1,192 @@
+/* 重置默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "微软雅黑", sans-serif;
+  overflow: hidden;
+}
+
+/* 头部导航栏 */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 10px;
+  z-index: 999;
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.2rem;
+}
+
+header nav button {
+  margin: 0 5px;
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* 地图容器 */
+#map {
+  width: 100%;
+  height: calc(100vh - 60px);
+  position: relative;
+  z-index: 1;
+}
+
+/* 侧边搜索栏 */
+.sidebar {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  z-index: 99;
+  width: 90%;
+  max-width: 300px;
+}
+
+.sidebar input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.sidebar button {
+  width: 48%;
+  margin: 0 1%;
+  padding: 8px 0;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: #555;
+}
+
+/* 路径规划面板 */
+.leaflet-routing-container {
+  position: absolute !important;
+  top: 70px;
+  left: 20px;
+  z-index: 999;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  padding: 10px;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* 小屏幕适配 */
+@media (max-width: 500px) {
+  .leaflet-routing-container, .sidebar {
+    top: 80px;
+    left: 10px;
+    right: 10px;
+    max-width: none;
+  }
+}
+
+/* 教学楼弹窗样式 */
+.building-popup {
+  width: 280px;
+  padding: 15px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+}
+
+/* 楼层组（透明菱形） */
+.floor-group {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.floor-plane {
+  transform: rotate(-8deg) translateX(10px);
+  width: 180px;
+  height: 40px;
+  background: rgba(180, 220, 255, 0.4);
+  border: 1px solid rgba(100, 180, 255, 0.6);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.floor-plane:hover {
+  transform: rotate(-8deg) translateX(10px) scale(1.05);
+  background: rgba(180, 220, 255, 0.6);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* 楼层布局图面板 */
+.floor-layout-panel {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  z-index: 998;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  max-width: 350px;
+  display: none;
+}
+
+.floor-layout-panel h4 {
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.floor-layout-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.close-layout-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 0;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.close-layout-btn:hover {
+  background-color: #555;
+}
